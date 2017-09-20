@@ -1,0 +1,32 @@
+<div class="container">
+	<div class="row">
+			<h1>{{title}}</h1>
+	</div>
+	<ul class="controller">
+				<!-- 当表达式(item === selectGeneral)为true时，Angular会添加一个CSS类selected。为false时则会移除selected类。 -->
+			<li *ngFor="let item of generals" (click)="oSelect(item)" [class.selected]="item==selectGeneral">
+				<label class="col-lg-4">{{item.id}} </label> 			
+					<span class="col-lg-4">
+						{{item.name}}
+					</span>
+					<span class="col-lg-4">
+						 {{item.source}}
+					</span>
+			</li>
+	</ul>
+	<div class="row">
+		<div *ngIf="selectGeneral">
+		  <h2>
+		    {{selectGeneral.name | uppercase}} is my hero
+		  </h2>
+		  <button (click)="gotoDetail()">View Details</button>
+		</div>
+	</div>
+</div>
+
+
+<!-- 测试拖拽指令 -->
+<div   [myDrag]="color" style="height:200px;width:200px;position: absolute;right: 0">
+</div>
+
+<!-- <hero-birthday></hero-birthday> -->

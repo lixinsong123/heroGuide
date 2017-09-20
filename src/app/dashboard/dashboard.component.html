@@ -1,0 +1,10 @@
+<div calss="container">
+	<div class="row">
+		<h3>Top Generals</h3>
+	</div>
+	<div class="row core">
+		<a class="col-lg-2" *ngFor="let general of generals"  [routerLink]="['/detail', general.id]">		  
+		     {{general.name}}
+		 </a>
+	</div>
+</div>
