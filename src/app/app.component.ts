@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 		  	<div class="parent">
 		  		 <a routerLink="/generals">Generals</a>
 		   		 <a routerLink="/dashboard">Dashboard</a>
+		   		 <a routerLink="/test/component">test</a>
 		  	</div>  
 		   <router-outlet></router-outlet>
   `,
@@ -18,9 +19,10 @@ import { Component } from '@angular/core';
 			color:black;
 		}
 		.parent{
+			
+			width:500px;
+			padding-top:50px;
 			margin:0 auto;
-			width:300px;
-			margin-top:50px;
 		}
 		a{
 			display:inline-block;

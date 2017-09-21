@@ -1,10 +1,18 @@
 
 import { NgModule } from '@angular/core';
 
+//核心模块
 import { BrowserModule } from '@angular/platform-browser';
+//双向数据绑定模块
 import { FormsModule }   from '@angular/forms';
+//动画相关模块
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {GeneralService} from'./general.service';
+
+
+
+
 
 //路由所需要的核心模块
 import { RouterModule }   from '@angular/router';
@@ -23,6 +31,11 @@ import {DashboardComponent} from './dashboard/dashboard.component';
 import { AppComponent } from './app.component';
 import {GeneralDetailComponent} from './general/general-detail.component';
 
+import {HeroListBasicComponent} from '../Animations/general-list-basic.component';
+//组件用法的一些模块测试
+import {CountdownLocalVarParentComponent} from '../componentLink/countdown-parent.component';
+import {CountdownTimerComponent}          from '../componentLink/countdown-timer.component'
+
 
 @NgModule({
   //列出程序中的组件
@@ -33,6 +46,9 @@ import {GeneralDetailComponent} from './general/general-detail.component';
       DashboardComponent,
 
      HighlightDirective,
+     CountdownLocalVarParentComponent,
+     CountdownTimerComponent,
+     HeroListBasicComponent
     // HeroBirthdayComponent,
     // ExponentialStrengthPipe
   ],
@@ -46,7 +62,9 @@ import {GeneralDetailComponent} from './general/general-detail.component';
   //双向数据绑定依赖的模块
     FormsModule,
    //路由模块
-    AppRoutingModule
+    AppRoutingModule,
+    //动画模块
+    BrowserAnimationsModule
   ],
   providers: [GeneralService],
   /*@NgModule.bootstrap属性把这个AppComponent标记为引导 (bootstrap) 组件。 
