@@ -11,8 +11,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {GeneralService} from'./general.service';
 
 
+//危机中心的子路由模块
+import {CrisisCenterRoutingModule} from './crisis-center/crisis-center-routing.module';
 
+//路由守卫的模块
+import {AdminModule}  from '../routeGuard/admin.module';
+import { AuthService }      from '../routeGuard/auth.service';
 
+//登录模块
+import {LoginRoutingModule} from './login/login-routing.module';
+import {LoginComponent}     from './login/login.component';
 
 //路由所需要的核心模块
 import { RouterModule }   from '@angular/router';
@@ -36,6 +44,14 @@ import {HeroListBasicComponent} from '../Animations/general-list-basic.component
 import {CountdownLocalVarParentComponent} from '../componentLink/countdown-parent.component';
 import {CountdownTimerComponent}          from '../componentLink/countdown-timer.component'
 
+//路由守卫
+import {AuthGuard} from "../routeGuard/auth-guard.service";
+
+//子路由
+import { CrisisCenterHomeComponent } from './crisis-center/crisis-center-home.component';
+import { CrisisListComponent }       from './crisis-center/crisis-list.component';
+import { CrisisCenterComponent }     from './crisis-center/crisis-center.component';
+import { CrisisDetailComponent }     from './crisis-center/crisis-detail.component';
 
 @NgModule({
   //列出程序中的组件
@@ -48,7 +64,12 @@ import {CountdownTimerComponent}          from '../componentLink/countdown-timer
      HighlightDirective,
      CountdownLocalVarParentComponent,
      CountdownTimerComponent,
-     HeroListBasicComponent
+     HeroListBasicComponent,
+     CrisisCenterHomeComponent,
+     CrisisListComponent,
+     CrisisCenterComponent,
+     CrisisDetailComponent,
+     LoginComponent
     // HeroBirthdayComponent,
     // ExponentialStrengthPipe
   ],
@@ -64,9 +85,15 @@ import {CountdownTimerComponent}          from '../componentLink/countdown-timer
    //路由模块
     AppRoutingModule,
     //动画模块
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    //危机中心的子路由模块
+    CrisisCenterRoutingModule,
+
+    AdminModule,
+    //登录模块
+    LoginRoutingModule
   ],
-  providers: [GeneralService],
+  providers: [GeneralService,AuthGuard,AuthService],
   /*@NgModule.bootstrap属性把这个AppComponent标记为引导 (bootstrap) 组件。 
     当 Angular 引导应用时，它会在 DOM 中渲染AppComponent，并把结果放进index.html的<app-root>元素标记内部。  
   */

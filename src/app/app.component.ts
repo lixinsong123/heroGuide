@@ -9,6 +9,8 @@ import { Component } from '@angular/core';
 		  		 <a routerLink="/generals">Generals</a>
 		   		 <a routerLink="/dashboard">Dashboard</a>
 		   		 <a routerLink="/test/component">test</a>
+		   		  <a routerLink="/admin">Admin</a>
+		   		 <a routerLink="/crisis-center">crisis-center</a>
 		  	</div>  
 		   <router-outlet></router-outlet>
   `,
@@ -20,7 +22,7 @@ import { Component } from '@angular/core';
 		}
 		.parent{
 			
-			width:500px;
+			width:900px;
 			padding-top:50px;
 			margin:0 auto;
 		}
